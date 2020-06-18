@@ -527,12 +527,12 @@ if __name__ == '__main__':
             groups.append({"id": i, "content": "MPI Proc. #"+str(i)})
             
         
-        time_file = temp_dir + "times.txt"
+        time_file = temp_dir + "/times.txt"
         f = open(time_file, "w")
         json.dump(events, f)
         f.close()
         
-        group_file = temp_dir + "groups.txt"
+        group_file = temp_dir + "/groups.txt"
         f = open(group_file, "w")
         json.dump(groups, f)
         f.close()
@@ -576,7 +576,7 @@ if __name__ == '__main__':
         little_files = sorted(little_files, key = lambda x: (keys.index(x[1]) if x[1] in keys else keys.index("chr"+x[1]), int(x[2])))
         print("[SYSTEM] "+str(len(little_files))+" FILES TO MERGE (SORTED): ", little_files)
         
-        smallfiles_list_filename = temp_dir + "files.txt"
+        smallfiles_list_filename = temp_dir + "/files.txt"
         f = open(smallfiles_list_filename, "w")
         for little_file in little_files:
             f.write(little_file[0] + "\n")
